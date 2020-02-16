@@ -148,9 +148,9 @@ class Valuestore implements ArrayAccess, Countable
      */
     public function get(string $name, $default = null)
     {
-        $all = $this->all();
+        $all = Arr::dot($this->all());
 
-        if (! array_key_exists($name, $all)) {
+        if (!array_key_exists($name, $all)) {
             return $default;
         }
 
